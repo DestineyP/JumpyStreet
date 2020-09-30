@@ -31,7 +31,7 @@ public class MovementScript : MonoBehaviour
        
         if (!isMoving)
         {
-            MoveDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            MoveDirection = new Vector2(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
             
                 if (Mathf.Abs(MoveDirection.x) > Mathf.Abs(MoveDirection.y))   ///making sure the player cannot move diagnal
                 {
@@ -74,7 +74,7 @@ public class MovementScript : MonoBehaviour
 
         if (gridOrientation == Orientation.Horizontal)
         {
-            endPosition = new Vector3(startPosition.x + System.Math.Sign(MoveDirection.x) * gridSize, startPosition.y, startPosition.z + System.Math.Sign(MoveDirection.y) * gridSize);
+            endPosition = new Vector3(startPosition.x + System.Math.Sign(MoveDirection.x) * gridSize, startPosition.y, startPosition.z + System.Math.Sign(MoveDirection.y) * -gridSize);
         }
         else
         {
@@ -87,7 +87,7 @@ public class MovementScript : MonoBehaviour
         {
             moveTime += Time.deltaTime * (moveSpeed / gridSize) * factor;
 
-            if(startPosition.z - endPosition.z > 0)
+            if(startPosition.x - endPosition.x > 0)
             {
                 Debug.Log("MovingBackwards");
                 movedbackwards = true;
