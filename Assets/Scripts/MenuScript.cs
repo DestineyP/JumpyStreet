@@ -10,7 +10,7 @@ public class MenuScript : MonoBehaviour
     public void OnClickPlay()
     {
 
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("NCG Test");
         Debug.Log("You clicked the Play Button");
 
     }

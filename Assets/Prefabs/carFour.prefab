@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3520167719080708135}
   m_Layer: 0
   m_Name: carFour
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,8 +70,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.686398, y: 1.0406456, z: 0.48078293}
-  m_Center: {x: -0.01211381, y: -0.0203228, z: 0.22251406}
+  m_Size: {x: 0.686398, y: 1.0692472, z: 0.48078293}
+  m_Center: {x: -0.01211381, y: -0.0060220063, z: 0.22251406}
 --- !u!1 &647123542100010018
 GameObject:
   m_ObjectHideFlags: 0

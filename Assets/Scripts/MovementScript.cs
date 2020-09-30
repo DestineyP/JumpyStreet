@@ -24,8 +24,12 @@ public class MovementScript : MonoBehaviour
     private float moveTime;
     private float factor;
     private bool isMoving = false;
+    public bool canMove;
 
-
+    private void Start()
+    {
+        canMove = true;
+    }
     public void Update()
     {
        
@@ -43,7 +47,7 @@ public class MovementScript : MonoBehaviour
                 }
            
 
-            if (MoveDirection != Vector2.zero) ///if the player is trying to move in a direction start the move corutine
+            if (MoveDirection != Vector2.zero && canMove) ///if the player is trying to move in a direction start the move corutine
             {
                 
                 StartCoroutine(moveTowardPosition(transform));
