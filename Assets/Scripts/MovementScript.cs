@@ -93,7 +93,7 @@ public class MovementScript : MonoBehaviour
 
             if(startPosition.x - endPosition.x > 0)
             {
-                Debug.Log("MovingBackwards");
+                //Debug.Log("MovingBackwards");
                 movedbackwards = true;
             }
             else

@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TerrainGeneration : MonoBehaviour
 {
+
+
+    /// <summary>
+    /// William CHANGE CODE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    /// </summary>
     public GameObject Grass, Water, Road; //Our Different Terrain Types
 
     int firstRand, secondRand, disPlayer;
