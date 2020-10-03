@@ -6,16 +6,15 @@ public class DistanceSoundTrigger : MonoBehaviour
 {
 
 
-    private GameObject playerobj;
+    public GameObject playerobj;
     public GameObject thisObject;
-   
-
+    public AudioSource soundsToPlay;
     public float distance;
     public bool isFinding;
 
     void Start()
     {
-        playerobj = GameObject.Find("Player"); 
+        
         isFinding = true;
         StartCoroutine(FindplayerLocation());
     }
@@ -29,7 +28,9 @@ public class DistanceSoundTrigger : MonoBehaviour
             
             if (distance < 5)
             {
-                
+
+                Debug.Log("PlayingSound");
+                soundsToPlay.Play();
                //this will be where I will Play the audioClip. The audio clip will be global and public so I can change out the clip 
                 //per item that needs to have this script attacthed to it. I will use another courountine to check if it is far away 
                 //from player to stop the audio. 
