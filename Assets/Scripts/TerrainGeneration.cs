@@ -25,7 +25,7 @@ public class TerrainGeneration : MonoBehaviour
                 secondRand = Random.Range(1, 8); //Note to self - Ajust this later. This affects how many common this tpye of tile is. - William
                 for (int i= 0; i < secondRand; i++)
                 {
-                    intPos = new Vector3(0, -.1f, disPlayer);
+                    intPos = new Vector3(disPlayer, -.1f, 0);
                     disPlayer += 1;
                     GameObject GrassInt = Instantiate(Grass) as GameObject;
                     GrassInt.transform.position = intPos;
@@ -37,7 +37,7 @@ public class TerrainGeneration : MonoBehaviour
                 secondRand = Random.Range(1, 8); //Note to self - Ajust this later. This affects how many common this tpye of tile is. - William
                 for (int i = 0; i < secondRand; i++)
                 {
-                    intPos = new Vector3(0, -.2f, disPlayer);
+                    intPos = new Vector3(disPlayer, -.2f, 0);
                     disPlayer += 1;
                     GameObject RoadInt = Instantiate(Road) as GameObject;
                     RoadInt.transform.position = intPos;
@@ -49,7 +49,7 @@ public class TerrainGeneration : MonoBehaviour
                 secondRand = Random.Range(1, 8); //Note to self - Ajust this later. This affects how many common this tpye of tile is. - William
                 for (int i = 0; i < secondRand; i++)
                 {
-                    intPos = new Vector3(0, 0, disPlayer);
+                    intPos = new Vector3(disPlayer, 0, 0);
                     disPlayer += 1;
                     GameObject WaterInt = Instantiate(Water) as GameObject;
                     WaterInt.transform.position = intPos;
