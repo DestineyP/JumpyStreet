@@ -11,7 +11,7 @@ public class CarGenerator : MonoBehaviour
     {
         StartCoroutine(LaneSpawning1());
         StartCoroutine(LaneSpawning2());
-        StartCoroutine(LaneSpawning3());
+        //StartCoroutine(LaneSpawning3());    Commented out to test a 2 lane Road
     }
 
     #region IEnumerators
@@ -21,8 +21,9 @@ public class CarGenerator : MonoBehaviour
     private IEnumerator LaneSpawning1()
     {
         int car = Random.Range(0, 4);
+        int randomSeconds = Random.Range(2, 5);  //To add randomness to the spawns
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(randomSeconds);  // wait for seconds was originally 3 seconds
         Instantiate(carPrefabs[car], lanes[0].transform.position, lanes[0].transform.rotation);
 
         StartCoroutine(LaneSpawning1());
@@ -31,7 +32,8 @@ public class CarGenerator : MonoBehaviour
     private IEnumerator LaneSpawning2()
     {
         int car = Random.Range(0, 4);
-        yield return new WaitForSeconds(2);
+        int randomSeconds = Random.Range(2, 5); //To add randomness to the spawns
+        yield return new WaitForSeconds(randomSeconds); // wait for seconds was originally 3 seconds
         Instantiate(carPrefabs[car], lanes[1].transform.position, lanes[0].transform.rotation);
 
         StartCoroutine(LaneSpawning2());
