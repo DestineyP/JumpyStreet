@@ -40,7 +40,7 @@ public class TerrianTest : MonoBehaviour
             cloneList.Add(lastSpawned);
 
             int listLength = cloneList.Count;
-            if(listLength > 5)
+            if(listLength > 20)
             {
 
                 cloneList[0].SetActive(false);
@@ -49,7 +49,7 @@ public class TerrianTest : MonoBehaviour
 
             }
 
-            Debug.Log(lastSpawned.name);
+             // Debug.Log(lastSpawned.name);
 
 
             yield return new WaitForSeconds(4);

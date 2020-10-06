@@ -8,6 +8,7 @@ public class MovementScript : MonoBehaviour
 
     bool movedbackwards = false;
     public int moveBackCounter = 0;
+    public Animator anim;
     
 
     private float moveSpeed = 3f;
@@ -25,10 +26,14 @@ public class MovementScript : MonoBehaviour
     private float factor;
     private bool isMoving = false;
     public bool canMove;
+    bool isMovingForward;
 
     private void Start()
     {
+        isMovingForward = false;
+        anim.SetBool("isMovingForward", isMovingForward); 
         canMove = true;
+        isMovingForward = false;
     }
     public void Update()
     {
@@ -53,6 +58,7 @@ public class MovementScript : MonoBehaviour
                 StartCoroutine(moveTowardPosition(transform));
                 if (movedbackwards == false)
                 {
+                   
                     ScoreKeeper.ScoreScript.AddScore();
                     moveBackCounter = 0;
                 }
@@ -66,6 +72,7 @@ public class MovementScript : MonoBehaviour
                   
                 }
             }
+          
         }
     }
 
@@ -99,8 +106,10 @@ public class MovementScript : MonoBehaviour
             else
             {
                 movedbackwards = false;
+               
             }
             transform.position = Vector3.Lerp(startPosition, endPosition, moveTime);
+            
             yield return null;
         }
 

@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreKeeper : MonoBehaviour
 {
 
+    public TMP_Text scoreText;
+    public TMP_Text highScoreText;
     public static ScoreKeeper ScoreScript;
     public int score;
     public int highScore;
-    public Text scoreText;
-    public Text highScoreText;
+   
 
     // Start is called before the first frame update
     void Start()

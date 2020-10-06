@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class MenuScript : MonoBehaviour
 {
    
@@ -10,7 +11,7 @@ public class MenuScript : MonoBehaviour
     public void OnClickPlay()
     {
 
-        SceneManager.LoadScene("NCG Test");
+        SceneManager.LoadScene("PlayScene");
         Debug.Log("You clicked the Play Button");
 
     }
@@ -27,7 +28,7 @@ public class MenuScript : MonoBehaviour
     public void OnclickInstructions()
     {
 
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("InstructionsScene");
         Debug.Log("You have clicked the InstructionsButton");
 
     }
@@ -36,7 +37,7 @@ public class MenuScript : MonoBehaviour
     public void OnclCickCredits()
     {
 
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("CreditsScene");
         Debug.Log("You ahve clicked the creditsButton");
 
     }
@@ -45,7 +46,7 @@ public class MenuScript : MonoBehaviour
    public void OnclickMenu()
    {
 
-     //this will pull up the menu during gameplay to acess quit button, back to main menu button, or other buttons needed
+        SceneManager.LoadScene("MainMenu");
 
    }
 
