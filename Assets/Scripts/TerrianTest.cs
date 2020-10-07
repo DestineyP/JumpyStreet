@@ -9,6 +9,7 @@ public class TerrianTest : MonoBehaviour
 
     public GameObject[] terrain;
     public GameObject lastSpawned;
+    GameObject clone;
 
     float currentOffset = 8f;
     bool gamePlays = true;
@@ -33,9 +34,25 @@ public class TerrianTest : MonoBehaviour
 
             Vector3 spawnPosition = lastSpawned.transform.position + localOffset;
 
-            GameObject clone = Instantiate(terrain[randomTerrain], spawnPosition, transform.rotation * Quaternion.Euler(90, 0, 0));
+            if (lastSpawned.name == "Water(Clone)")
+            {
+                spawnPosition.y = spawnPosition.y + .20f;
+                clone = Instantiate(terrain[randomTerrain], spawnPosition, transform.rotation * Quaternion.Euler(90, 0, 0));
+            }
+            else
+            {
+
+                clone = Instantiate(terrain[randomTerrain], spawnPosition, transform.rotation * Quaternion.Euler(90, 0, 0));
+
+            }
+
+            if(clone.name == "Water(Clone)")
+            {
+                clone.transform.position = new Vector3(clone.transform.position.x, clone.transform.position.y - .20f, clone.transform.position.z); 
+            }
 
             lastSpawned = clone;
+            Debug.Log(lastSpawned.name);
 
             cloneList.Add(lastSpawned);
 
