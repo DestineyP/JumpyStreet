@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChickenCollision : MonoBehaviour
 {
 
-    public GameObject chickenDeath;
+   
     public GameObject chicken;
     public GameObject deathPanel;
 
@@ -13,7 +13,7 @@ public class ChickenCollision : MonoBehaviour
 
     private void Start()
     {
-        chickenDeath.SetActive(false);
+        
         chicken = this.gameObject;
         deathPanel.SetActive(false);
     }
@@ -24,7 +24,7 @@ public class ChickenCollision : MonoBehaviour
         if(collision.gameObject.tag == "Obstacle")
         {
             deathPanel.SetActive(true);
-            chickenDeath.SetActive(true);
+            
             chicken.SetActive(false);
 
         }

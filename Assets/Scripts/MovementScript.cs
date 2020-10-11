@@ -58,9 +58,10 @@ public class MovementScript : MonoBehaviour
                 StartCoroutine(moveTowardPosition(transform));
                 if (movedbackwards == false)
                 {
-                   
+                    anim.SetBool("isMovingForward", true);
                     ScoreKeeper.ScoreScript.AddScore();
                     moveBackCounter = 0;
+                    
                 }
                 else
                 {
@@ -109,7 +110,8 @@ public class MovementScript : MonoBehaviour
                
             }
             transform.position = Vector3.Lerp(startPosition, endPosition, moveTime);
-            
+            anim.SetBool("isMovingForward", false);
+
             yield return null;
         }
 
