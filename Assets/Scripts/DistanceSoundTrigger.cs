@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,43 +8,76 @@ public class DistanceSoundTrigger : MonoBehaviour
 
 
     public GameObject playerobj;
-    public GameObject thisObject;
+    //public GameObject thisObject;
     public AudioSource soundsToPlay;
     public float distance;
     public bool isFinding;
+    public bool soundOn;
+    public bool playerHasLeft;
 
     void Start()
     {
-        
+        soundOn = false;
         isFinding = true;
-        StartCoroutine(FindplayerLocation());
+        StartCoroutine(FindIfClose());
+        StartCoroutine(FindIfFar());
     }
-    IEnumerator FindplayerLocation()
+    IEnumerator FindIfClose()
     {
 
         while (isFinding) 
         {
 
-            distance = Vector3.Distance(thisObject.transform.position, playerobj.transform.position);   
+            distance = Vector3.Distance(gameObject.transform.position, playerobj.transform.position);   
             
             if (distance < 5)
             {
 
                 Debug.Log("PlayingSound");
                 soundsToPlay.Play();
-               //this will be where I will Play the audioClip. The audio clip will be global and public so I can change out the clip 
-                //per item that needs to have this script attacthed to it. I will use another courountine to check if it is far away 
-                //from player to stop the audio. 
-
-                isFinding = false;  
+                isFinding = false;
+                soundOn = true;
 
             }
+          
             yield return null;
 
 
         }
-        yield return new WaitForSeconds(1);
+
+   
+        yield return new WaitForSeconds(3);
     }
+
+
+    IEnumerator FindIfFar()
+    {
+
+        while (soundOn)
+        {
+
+            distance = Vector3.Distance(gameObject.transform.position, playerobj.transform.position);
+
+            if (distance > 5)
+            {
+
+                Debug.Log("PlayingSound");
+                soundsToPlay.Stop();
+                soundOn = false;
+
+            }
+
+            yield return null;
+
+
+        }
+
+    
+        yield return new WaitForSeconds(3);
+    }
+
+
+
 
 
 }
