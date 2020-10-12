@@ -11,7 +11,14 @@ public class CarScript : MonoBehaviour
 
     private void Update() //Movement for the car.
     {
-        transform.Translate(new Vector3(0, -Time.deltaTime * 3, 0));
+        if (transform.rotation == new Quaternion(-90f, 0f, 180f, 0f))
+        {
+            transform.Translate(new Vector3(0, -Time.deltaTime * 3, 0));
+        }
+        if (transform.rotation == new Quaternion(-90f, 0f, 0f, 0f))
+        {
+            transform.Translate(new Vector3(0, -Time.deltaTime * 3, 0));
+        }
     }
 
     private void OnCollisionEnter(Collision collision) //Collision setup to interact with the player
