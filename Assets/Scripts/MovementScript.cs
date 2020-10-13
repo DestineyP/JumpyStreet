@@ -40,6 +40,7 @@ public class MovementScript : MonoBehaviour
        
         if (!isMoving)
         {
+            
             MoveDirection = new Vector2(Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
             
                 if (Mathf.Abs(MoveDirection.x) > Mathf.Abs(MoveDirection.y))   ///making sure the player cannot move diagnal
@@ -58,6 +59,7 @@ public class MovementScript : MonoBehaviour
                 StartCoroutine(moveTowardPosition(transform));
                 if (movedbackwards == false)
                 {
+                    gameObject.transform.parent = null;
                     anim.SetBool("isMovingForward", true);
                     ScoreKeeper.ScoreScript.AddScore();
                     moveBackCounter = 0;
@@ -65,6 +67,7 @@ public class MovementScript : MonoBehaviour
                 }
                 else
                 {
+                    gameObject.transform.parent = null;
                     moveBackCounter++;
                     if(moveBackCounter > 3)
                     {

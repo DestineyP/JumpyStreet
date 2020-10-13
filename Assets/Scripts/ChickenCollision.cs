@@ -28,8 +28,20 @@ public class ChickenCollision : MonoBehaviour
             chicken.SetActive(false);
 
         }
+
+        if(collision.gameObject.tag == "Log")
+        {
+
+
+            chicken.transform.parent = collision.transform;
+
+
+        }
+
+
     }
 
+    
 
 
 }
