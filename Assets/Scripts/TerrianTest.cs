@@ -57,7 +57,7 @@ public class TerrianTest : MonoBehaviour
             cloneList.Add(lastSpawned);
 
             int listLength = cloneList.Count;
-            if(listLength > 20)
+            if(listLength > 50)
             {
 
                 cloneList[0].SetActive(false);
