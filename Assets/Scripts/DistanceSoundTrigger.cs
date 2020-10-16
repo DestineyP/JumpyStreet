@@ -32,7 +32,7 @@ public class DistanceSoundTrigger : MonoBehaviour
             if (distance < 5)
             {
 
-                Debug.Log("PlayingSound");
+               // Debug.Log("PlayingSound");
                 soundsToPlay.Play();
                 isFinding = false;
                 soundOn = true;
@@ -60,7 +60,7 @@ public class DistanceSoundTrigger : MonoBehaviour
             if (this.gameObject.name == "Water(Clone)" && distance > 2)
             {
 
-                Debug.Log("Should Stop water");
+               // Debug.Log("Should Stop water");
                 soundsToPlay.Stop();
                 soundOn = false;
 

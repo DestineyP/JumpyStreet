@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChickenCollision : MonoBehaviour
 {
@@ -23,9 +24,12 @@ public class ChickenCollision : MonoBehaviour
     {
         if(collision.gameObject.tag == "Obstacle")
         {
-            deathPanel.SetActive(true);
-            
-            chicken.SetActive(false);
+           // deathPanel.SetActive(true);
+
+           // chicken.SetActive(false);
+           // Debug.Log("IsHit");
+
+            SceneManager.LoadScene("MainMenu");
 
         }
 
@@ -41,7 +45,7 @@ public class ChickenCollision : MonoBehaviour
 
     }
 
-    
+   
 
 
 }

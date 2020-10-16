@@ -52,7 +52,7 @@ public class TerrianTest : MonoBehaviour
             }
 
             lastSpawned = clone;
-            Debug.Log(lastSpawned.name);
+          //  Debug.Log(lastSpawned.name);
 
             cloneList.Add(lastSpawned);
 
