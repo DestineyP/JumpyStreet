@@ -80,6 +80,8 @@ public class MovementScript : MonoBehaviour
         }
     }
 
+
+
     public IEnumerator moveTowardPosition(Transform transform)
     {
 
@@ -104,7 +106,7 @@ public class MovementScript : MonoBehaviour
 
             if(startPosition.x - endPosition.x > 0)
             {
-                //Debug.Log("MovingBackwards");
+                
                 movedbackwards = true;
             }
             else

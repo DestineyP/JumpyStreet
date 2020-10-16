@@ -17,6 +17,7 @@ public class TerrianTest : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
         gamePlays = true;
         StartCoroutine(TerrainSpawner()); 
        

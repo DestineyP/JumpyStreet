@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class ChickenCollision : MonoBehaviour
 {
 
-   
+    public GameObject innerChicken;
     public GameObject chicken;
-    public GameObject deathPanel;
+    public GameObject squishedChicken;
+    public AudioSource soundsToPlay;
+    public AudioSource waterSounds;
 
 
 
@@ -16,7 +18,7 @@ public class ChickenCollision : MonoBehaviour
     {
         
         chicken = this.gameObject;
-        deathPanel.SetActive(false);
+        squishedChicken.SetActive(false);
     }
 
 
@@ -24,12 +26,11 @@ public class ChickenCollision : MonoBehaviour
     {
         if(collision.gameObject.tag == "Obstacle")
         {
-           // deathPanel.SetActive(true);
 
-           // chicken.SetActive(false);
-           // Debug.Log("IsHit");
-
-            SceneManager.LoadScene("MainMenu");
+            soundsToPlay.Play();
+            squishedChicken.SetActive(true);
+            innerChicken.SetActive(false);
+            Invoke("backToMain",.5f);
 
         }
 
@@ -42,10 +43,20 @@ public class ChickenCollision : MonoBehaviour
 
         }
 
+        if(collision.gameObject.tag == "Water")
+        {
+            waterSounds.Play();
+            innerChicken.SetActive(false);
+            Invoke("backToMain", .8f);
+        }
+
 
     }
 
-   
+   void backToMain()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 
 
 }

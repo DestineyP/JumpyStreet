@@ -19,7 +19,7 @@ public class DistanceSoundTrigger : MonoBehaviour
         soundOn = false;
         isFinding = true;
         StartCoroutine(FindIfClose());
-        StartCoroutine(FindIfFar());
+       
     }
     IEnumerator FindIfClose()
     {
@@ -36,7 +36,7 @@ public class DistanceSoundTrigger : MonoBehaviour
                 soundsToPlay.Play();
                 isFinding = false;
                 soundOn = true;
-
+                StartCoroutine(FindIfFar());
             }
           
             yield return null;
