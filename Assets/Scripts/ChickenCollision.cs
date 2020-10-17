@@ -30,7 +30,7 @@ public class ChickenCollision : MonoBehaviour
             soundsToPlay.Play();
             squishedChicken.SetActive(true);
             innerChicken.SetActive(false);
-            Invoke("backToMain",.5f);
+            Invoke("BackToMain",.5f);
 
         }
 
@@ -47,16 +47,26 @@ public class ChickenCollision : MonoBehaviour
         {
             waterSounds.Play();
             innerChicken.SetActive(false);
-            Invoke("backToMain", .8f);
+            Invoke("BackToMain", .8f);
+        }
+
+        if(collision.gameObject.tag == "Egg")
+        {
+
+            innerChicken.SetActive(false);
+            squishedChicken.SetActive(true);
+            soundsToPlay.Play();
+            Invoke("BackToMain", .4f);
+
         }
 
 
     }
 
-   void backToMain()
-    {
+   void BackToMain()
+   {
         SceneManager.LoadScene("MainMenu");
-    }
+   }
 
 
 }

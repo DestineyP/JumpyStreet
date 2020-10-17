@@ -8,6 +8,7 @@ TagManager:
   - Road
   - Log
   - Water
+  - Egg
   layers:
   - Default
   - TransparentFX

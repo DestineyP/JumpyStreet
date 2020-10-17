@@ -9,8 +9,8 @@ public class MovementScript : MonoBehaviour
     bool movedbackwards = false;
     public int moveBackCounter = 0;
     public Animator anim;
-    
 
+    public  GameObject egg;
     private float moveSpeed = 3f;
     private float gridSize = 1f;
     private enum Orientation
@@ -71,6 +71,7 @@ public class MovementScript : MonoBehaviour
                     moveBackCounter++;
                     if(moveBackCounter > 3)
                     {
+                        egg.SetActive(true);
                         Debug.Log("SpawnTheEagle");
                     }
                   

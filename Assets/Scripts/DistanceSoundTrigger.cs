@@ -29,7 +29,7 @@ public class DistanceSoundTrigger : MonoBehaviour
 
             distance = Vector3.Distance(gameObject.transform.position, playerobj.transform.position);   
             
-            if (distance < 5)
+            if (this.gameObject.name == "road" && distance < 5)
             {
 
                // Debug.Log("PlayingSound");
@@ -38,7 +38,17 @@ public class DistanceSoundTrigger : MonoBehaviour
                 soundOn = true;
                 StartCoroutine(FindIfFar());
             }
-          
+
+            if (this.gameObject.name == "waterSound" && distance < 6)
+            {
+                Debug.Log("Water");
+                // Debug.Log("PlayingSound");
+                soundsToPlay.Play();
+                isFinding = false;
+                soundOn = true;
+                StartCoroutine(FindIfFar());
+            }
+
             yield return null;
 
 
@@ -57,10 +67,10 @@ public class DistanceSoundTrigger : MonoBehaviour
 
             distance = Vector3.Distance(gameObject.transform.position, playerobj.transform.position);
 
-            if (this.gameObject.name == "Water(Clone)" && distance > 2)
+            if (this.gameObject.name == "waterSound" && distance > 8)
             {
 
-               // Debug.Log("Should Stop water");
+               
                 soundsToPlay.Stop();
                 soundOn = false;
 
@@ -68,7 +78,7 @@ public class DistanceSoundTrigger : MonoBehaviour
             if (this.gameObject.name == "road" && distance > 5)
             {
 
-               // Debug.Log("PlayingSound");
+               
                 soundsToPlay.Stop();
                 soundOn = false;
 
