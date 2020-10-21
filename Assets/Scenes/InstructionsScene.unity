@@ -292,9 +292,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.735, y: 0}
-  m_AnchorMax: {x: 1, y: 0.19859438}
-  m_AnchoredPosition: {x: -0.39996338, y: 0.40008545}
-  m_SizeDelta: {x: -220.85135, y: -185.62872}
+  m_AnchorMax: {x: 1, y: 0.23833336}
+  m_AnchoredPosition: {x: 0, y: -1.0869141}
+  m_SizeDelta: {x: -255.4606, y: -193.07509}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &305593359
 MonoBehaviour:
@@ -780,6 +780,7 @@ RectTransform:
   m_Children:
   - {fileID: 305593358}
   - {fileID: 2040917216}
+  - {fileID: 1346588119}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -871,6 +872,89 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1346588118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1346588119}
+  - component: {fileID: 1346588121}
+  - component: {fileID: 1346588120}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1346588119
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346588118}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 781558104}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.00012207, y: 149.1}
+  m_SizeDelta: {x: 1919.9995, y: 781.8398}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1346588120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346588118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 8a2b9e2a607dd2143b58c44bc32410b4, type: 3}
+    m_FontSize: 60
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 75
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Welcome to JumpyStreet! You are a Duck trying to cross the plains, roads,
+    and rivers to go who knows where. In order to get as far as you possibly can,
+    simply press the up arrow key to hop your way to victory! \n\nBe careful of cars
+    on the road or falling into the water, as thay will end your journey. And turning
+    around?... I wouldn't recommend it. Best of luck!"
+--- !u!222 &1346588121
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346588118}
+  m_CullTransparentMesh: 0
 --- !u!1 &1362746685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,9 +1124,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.3621958, y: 0.19859438}
-  m_AnchoredPosition: {x: 0, y: -0.27996826}
-  m_SizeDelta: {x: -305.0042, y: -186.98792}
+  m_AnchorMax: {x: 0.407, y: 0.2364815}
+  m_AnchoredPosition: {x: -0.27001953, y: -0.42993164}
+  m_SizeDelta: {x: -391.0042, y: -191.7607}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040917217
 MonoBehaviour:
