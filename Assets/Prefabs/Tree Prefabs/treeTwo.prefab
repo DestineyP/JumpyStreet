@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 5510148844940567651}
   m_Layer: 0
   m_Name: treeTwo
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -288,5 +288,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.48497343, y: 0.5674951, z: 0.8150753}
-  m_Center: {x: -0.014249086, y: 0.0013247132, z: 0.42816833}
+  m_Size: {x: 0.5793407, y: 0.5674951, z: 0.8150753}
+  m_Center: {x: -0.00432837, y: 0.0013247132, z: 0.42816833}

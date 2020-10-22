@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 5239410905134443777}
   m_Layer: 0
   m_Name: treeTen
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,8 +383,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7049246, y: 0.72421044, z: 1.9091823}
-  m_Center: {x: -0.014728069, y: -0.025279462, z: 0.9606854}
+  m_Size: {x: 0.7049246, y: 1.0104308, z: 1.9091823}
+  m_Center: {x: -0.014728069, y: -0.02443926, z: 0.9606854}
 --- !u!1 &4744368931183674285
 GameObject:
   m_ObjectHideFlags: 0

@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 7668809274967820538}
   m_Layer: 0
   m_Name: treeThirteen
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -785,8 +785,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.57879496, y: 0.6436937, z: 0.7721523}
-  m_Center: {x: 0.010041475, y: -0.0059559643, z: 0.39905456}
+  m_Size: {x: 0.57879496, y: 0.9456879, z: 0.7721523}
+  m_Center: {x: 0.010041475, y: 0.0054614544, z: 0.39905456}
 --- !u!1 &5584707099359784554
 GameObject:
   m_ObjectHideFlags: 0
