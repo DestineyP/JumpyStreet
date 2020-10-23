@@ -24,17 +24,17 @@ public class ChickenCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Obstacle")
+        if (collision.gameObject.tag == "Obstacle")
         {
-
+            gameObject.transform.parent = null;
             soundsToPlay.Play();
             squishedChicken.SetActive(true);
             innerChicken.SetActive(false);
-            Invoke("BackToMain",.5f);
+            Invoke("BackToMain", .5f);
 
         }
 
-        if(collision.gameObject.tag == "Log")
+        if (collision.gameObject.tag == "Log")
         {
 
 
@@ -43,14 +43,14 @@ public class ChickenCollision : MonoBehaviour
 
         }
 
-        if(collision.gameObject.tag == "Water")
+        if (collision.gameObject.tag == "Water")
         {
             waterSounds.Play();
             innerChicken.SetActive(false);
             Invoke("BackToMain", .8f);
         }
 
-        if(collision.gameObject.tag == "Egg")
+        if (collision.gameObject.tag == "Egg")
         {
 
             innerChicken.SetActive(false);
@@ -59,9 +59,10 @@ public class ChickenCollision : MonoBehaviour
             Invoke("BackToMain", .4f);
 
         }
-
-       
-
+        if (collision.gameObject.tag == "Border")
+        {
+            BackToMain();
+        }
     }
 
    void BackToMain()

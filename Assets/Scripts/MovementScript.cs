@@ -6,11 +6,6 @@ using UnityEngine;
 public class MovementScript : MonoBehaviour
 {
 
-    public static MovementScript MoveScript;
-    bool movedbackwards = false;
-    
-    bool moveForward = false;
-    
     public int moveBackCounter = 0;
     public Animator anim;
    
@@ -24,31 +19,23 @@ public class MovementScript : MonoBehaviour
         Vertical
     }
     private Orientation gridOrientation = Orientation.Horizontal;
+
     private Vector2 MoveDirection;
     private Vector3 startPosition;
     private Vector3 endPosition;
-    private float moveTime;
-    private float factor;
-    private bool isMoving = false;
-    public bool canMove;
-    
-
-    Vector3 sidemove;
+    bool isMoving = false;
+    bool canMove;
+    bool movedbackwards = false;
+    bool moveForward = false;
+    bool sideMove = false;
 
     private void Start()
     {
-        MoveScript = this;
-        
-        
-        canMove = true;
-   
-        
+       canMove = true;
     }
     public void Update()
     {
 
-        
-       
         if (!isMoving)
         {
             
@@ -64,7 +51,7 @@ public class MovementScript : MonoBehaviour
                 }
             
 
-            if (MoveDirection != Vector2.zero) ///if the player is trying to move in a direction start the move corutine
+            if (MoveDirection != Vector2.zero) ///if the player is trying to move in a direction start moving
             {
                 
                 StartCoroutine(moveTowardPosition(transform));
@@ -75,7 +62,6 @@ public class MovementScript : MonoBehaviour
                     
                     gameObject.transform.parent = null; // If attatched to a log, unattaching.
                     Debug.Log("Forward");
-                    //transform.rotation = Quaternion.LookRotation(MoveDirection);
                     ScoreKeeper.ScoreScript.AddScore();
                     moveBackCounter = 0;
                     moveForward = false;
@@ -85,15 +71,19 @@ public class MovementScript : MonoBehaviour
                 {
                     gameObject.transform.parent = null;
                     moveBackCounter++;
-                   // transform.rotation = Quaternion.LookRotation(MoveDirection);
                     Debug.Log("back");
                     if (moveBackCounter > 3)
                     {
                         egg.SetActive(true);
-                       
+
                     }
                     movedbackwards = false;
-                  
+                   
+                }
+                if(sideMove == true)
+                {
+                    sideMove = false;
+                    ScoreKeeper.ScoreScript.AddScore();
                 }
       
                
@@ -106,10 +96,11 @@ public class MovementScript : MonoBehaviour
 
     public IEnumerator moveTowardPosition(Transform transform)
     {
+
         canMove = true;
         isMoving = true;
         startPosition = transform.position;
-        moveTime = 0;
+       float moveTime = 0;
 
         if (gridOrientation == Orientation.Horizontal)
         {
@@ -120,32 +111,31 @@ public class MovementScript : MonoBehaviour
             endPosition = new Vector3(startPosition.x + System.Math.Sign(MoveDirection.x) * gridSize, startPosition.y + System.Math.Sign(MoveDirection.y) * gridSize, startPosition.z);
         }
 
-        factor = 1f;
+      float  factor = 1f;
 
 
-       // checkForTrees();
-        while (moveTime < 1f)
+        checkForTrees();
+        while (moveTime < 1f && canMove)
         {
             moveTime += Time.deltaTime * (moveSpeed / gridSize) * factor;
-            checkForTrees();
+
             if (canMove)
             {
                 transform.position = Vector3.Lerp(startPosition, endPosition, moveTime);
             }
            
             
-            
-            
-               
-            
             if (startPosition.x - endPosition.x > 0)
             { 
                 movedbackwards = true;
-           
             }
             if (startPosition.x - endPosition.x < 0)
             {
                 moveForward = true;
+            }
+            if(startPosition.z - endPosition.z > 0 || startPosition.z - endPosition.z < 0)
+            {
+                sideMove = true;
             }
           
 
@@ -162,15 +152,14 @@ public class MovementScript : MonoBehaviour
 
 
 
-   void endMovement()
+   void endMovement() // Signaling the end of the movment time so the player can move again.
    {
         isMoving = false;
         
    }
 
-    void checkForTrees()
+    void checkForTrees() // Checking if the ray hits a tree and stoping movement in that direction if it does.
     {
-
 
         RaycastHit hit;
         Vector3 direction = (endPosition - startPosition);
@@ -181,22 +170,14 @@ public class MovementScript : MonoBehaviour
 
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
 
-          
-
         }
         else if (hit.collider.tag == "Tree")
         {
 
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 2, Color.blue);
             canMove = false;
-           
 
         }
-
-
-
-
-
     }
 
 }

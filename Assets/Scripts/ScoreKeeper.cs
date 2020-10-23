@@ -51,12 +51,7 @@ public class ScoreKeeper : MonoBehaviour
 
 
 
-void PassScoreToSingleton()
-    {
 
-        PassScore.passScript.Score = score;
-        PassScore.passScript.highScore = highScore;
-    }
 
 
 

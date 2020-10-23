@@ -10,6 +10,7 @@ TagManager:
   - Water
   - Egg
   - Tree
+  - Border
   layers:
   - Default
   - TransparentFX
