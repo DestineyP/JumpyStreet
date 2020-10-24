@@ -28,6 +28,7 @@ public class MovementScript : MonoBehaviour
     bool movedbackwards = false;
     bool moveForward = false;
     bool sideMove = false;
+    float timeLeft = 10.0f;
 
     private void Start()
     {
@@ -35,7 +36,7 @@ public class MovementScript : MonoBehaviour
     }
     public void Update()
     {
-
+        TrackTime();
         if (!isMoving)
         {
             
@@ -61,7 +62,6 @@ public class MovementScript : MonoBehaviour
                 {
                     
                     gameObject.transform.parent = null; // If attatched to a log, unattaching.
-                    Debug.Log("Forward");
                     ScoreKeeper.ScoreScript.AddScore();
                     moveBackCounter = 0;
                     moveForward = false;
@@ -71,7 +71,6 @@ public class MovementScript : MonoBehaviour
                 {
                     gameObject.transform.parent = null;
                     moveBackCounter++;
-                    Debug.Log("back");
                     if (moveBackCounter > 3)
                     {
                         egg.SetActive(true);
@@ -80,11 +79,7 @@ public class MovementScript : MonoBehaviour
                     movedbackwards = false;
                    
                 }
-                if(sideMove == true)
-                {
-                    sideMove = false;
-                    ScoreKeeper.ScoreScript.AddScore();
-                }
+              
       
                
             }
@@ -117,6 +112,7 @@ public class MovementScript : MonoBehaviour
         checkForTrees();
         while (moveTime < 1f && canMove)
         {
+            
             moveTime += Time.deltaTime * (moveSpeed / gridSize) * factor;
 
             if (canMove)
@@ -132,11 +128,10 @@ public class MovementScript : MonoBehaviour
             if (startPosition.x - endPosition.x < 0)
             {
                 moveForward = true;
+                timeLeft = 10.0f;
+                Debug.Log("Restarttimer");
             }
-            if(startPosition.z - endPosition.z > 0 || startPosition.z - endPosition.z < 0)
-            {
-                sideMove = true;
-            }
+        
           
 
             yield return null;
@@ -179,5 +174,25 @@ public class MovementScript : MonoBehaviour
 
         }
     }
+
+
+
+   
+
+
+    void TrackTime()
+    {
+        timeLeft -= Time.deltaTime;
+
+        if (timeLeft <= 0)
+        {
+                egg.SetActive(true);
+
+        }
+    }
+    
+
+
+
 
 }

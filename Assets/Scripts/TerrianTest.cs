@@ -53,7 +53,7 @@ public class TerrianTest : MonoBehaviour
             }
 
             lastSpawned = clone;
-          //  Debug.Log(lastSpawned.name);
+          
 
             cloneList.Add(lastSpawned);
 
@@ -67,7 +67,7 @@ public class TerrianTest : MonoBehaviour
 
             }
 
-             // Debug.Log(lastSpawned.name);
+            
 
 
             yield return new WaitForSeconds(4);
