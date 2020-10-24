@@ -65,7 +65,7 @@ public class MenuScript : MonoBehaviour
 
     void ChangetoInstructions()
     {
-        SceneManager.LoadScene("CreditsScene");
+        SceneManager.LoadScene("InstructionsScene");
     }
 
 }
