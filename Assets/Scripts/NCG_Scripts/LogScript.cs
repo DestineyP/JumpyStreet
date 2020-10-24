@@ -24,7 +24,7 @@ public class LogScript : MonoBehaviour
 
     IEnumerator DestroySelf()
     {
-        yield return new WaitForSeconds(6.5f);
+        yield return new WaitForSeconds(15f);
 
         Destroy(gameObject);
     }

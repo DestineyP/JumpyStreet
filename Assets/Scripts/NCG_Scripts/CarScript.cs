@@ -31,7 +31,7 @@ public class CarScript : MonoBehaviour
 
     IEnumerator DestroySelf()  //This was the "Plan B" for the destruction of the cars.
     {
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(15);
         
         Destroy(gameObject);
     }
