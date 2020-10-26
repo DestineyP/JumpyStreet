@@ -944,8 +944,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "Welcome to JumpyStreet! You are a Duck trying to cross the plains, roads,
     and rivers to go who knows where. In order to get as far as you possibly can,
-    simply press the up arrow key to hop your way to victory! \n\nBe careful of cars
-    on the road or falling into the water, as thay will end your journey, and turning
+    simply press the arrows key to hop your way to victory! \n\nBe careful of cars
+    on the road or falling into the water, as they will end your journey, and turning
     around or not advancing forward for too long?... I wouldn't recommend it. Best
     of luck!"
 --- !u!222 &1346588121
