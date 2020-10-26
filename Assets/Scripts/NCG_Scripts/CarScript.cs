@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CarScript : MonoBehaviour
 {
+    public float speed = 3;
     private void Awake() //call for the destruction of the car in time.  This will be replaced with a kill box after a while.
     {
         StartCoroutine(DestroySelf());
@@ -13,11 +14,11 @@ public class CarScript : MonoBehaviour
     {
         if (transform.rotation == new Quaternion(-90f, 0f, 180f, 0f))
         {
-            transform.Translate(new Vector3(0, -Time.deltaTime * 3, 0));
+            transform.Translate(new Vector3(0, -Time.deltaTime * speed, 0));
         }
         if (transform.rotation == new Quaternion(-90f, 0f, 0f, 0f))
         {
-            transform.Translate(new Vector3(0, -Time.deltaTime * 3, 0));
+            transform.Translate(new Vector3(0, -Time.deltaTime * speed, 0));
         }
     }
 

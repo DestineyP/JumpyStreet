@@ -13,11 +13,11 @@ public class LogScript : MonoBehaviour
     {
         if (transform.rotation == new Quaternion(90f, 0f, 0f, 0f))
         {
-            transform.Translate(new Vector3(0, -Time.deltaTime * 3, 0));
+            transform.Translate(new Vector3(0, -Time.deltaTime * 3.5f, 0));
         }
         if (transform.rotation == new Quaternion(-90f, 0f, 0f, 0f))
         {
-            transform.Translate(new Vector3(0, -Time.deltaTime * 3, 0));
+            transform.Translate(new Vector3(0, -Time.deltaTime * 3.5f, 0));
         }
 
     }

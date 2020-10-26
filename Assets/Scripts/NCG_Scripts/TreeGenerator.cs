@@ -17,8 +17,8 @@ public class TreeGenerator : MonoBehaviour
     {
         for(int i = 0; i < 15; i++)
         {
-            int spawnChance = Random.Range(1, 4); //creates a chance to spawn the tree
-            if(spawnChance < 3)
+            int spawnChance = Random.Range(1, 5); //creates a chance to spawn the tree
+            if(spawnChance < 5)
             {
                 int randomTree = Random.Range(0, 8);//random tree from available meshes
                 Instantiate(trees[randomTree], spawners[i].transform.position, trees[randomTree].transform.rotation);
